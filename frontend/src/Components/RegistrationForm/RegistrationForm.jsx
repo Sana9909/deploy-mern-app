@@ -38,7 +38,7 @@ const RegistrationForm = () => {
             return handleError("All fields are required");
         }
         try {
-            const url = "http://localhost:8080/auth/register";
+            const url = "https://deploy-mern-app-sable.vercel.app/auth/register";
             const response = await fetch(url, {
                 method: "POST",
                 headers: {
