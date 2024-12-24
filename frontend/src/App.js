@@ -30,6 +30,9 @@ function App() {
 
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
+  // Private Route: a route that is only accessible if the user is authenticated
+  // If the user is not authenticated, they will be redirected to the login page
+  // If the user is authenticated, the element prop will be rendered
   const PrivateRoute = ({ element }) => {
     return isAuthenticated ? element : <Navigate to="/login" />
   };
@@ -45,7 +48,6 @@ function App() {
           <Route path="/login" element={<LoginForm />} />
           <Route path="/register" element={<RegistrationForm />} />
           <Route path="/homepage" element={<PrivateRoute element={<Homepage />} />} />
-          {/* <Route path="/homepage?" element={<Navigate replace to="/login" />} /> */}
           <Route path="/*" element={<PageNotFound />} />
         </Routes>
       </div>

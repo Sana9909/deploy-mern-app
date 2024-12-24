@@ -23,7 +23,6 @@ const LoginForm = () => {
         console.log(name, value);
         const copyLoginInfo = {...loginInfo};
         copyLoginInfo[name] = value;
-        // console.log(copyRegInfo);
         setLoginInfo(copyLoginInfo);
     }
 
